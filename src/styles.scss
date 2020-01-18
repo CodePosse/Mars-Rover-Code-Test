@@ -1,0 +1,27 @@
+.dialog {
+  overflow-y: auto;
+  overflow-x: hidden;
+  bottom: 0 !important;
+  height: 100vh !important;
+  background: transparent;
+  max-height: none;
+
+  &, * {
+    border: none !important;
+  }
+
+  .dialog-title {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    top: 9px;
+    left: 24px;
+    color: #fff;
+  }
+
+  [dialog-title] {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 95%;
+  }
+}

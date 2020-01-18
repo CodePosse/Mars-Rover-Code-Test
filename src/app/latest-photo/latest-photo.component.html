@@ -1,0 +1,9 @@
+<div *ngIf="Loading" data-role="activity" data-type="ring" data-style="dark" style="margin: 70px auto;"></div>
+<div *ngIf="Photo.img_src" class="img-container">
+  <img [src]="Photo.img_src" alt="">
+  <hr>
+  <div class="float-right text-right">
+    <span class="d-block">{{Photo.rover.name}} {{Photo.camera.name}}</span>
+    <span class="d-block">{{Photo.earth_date | date: 'mediumDate'}}</span>
+  </div>
+</div>

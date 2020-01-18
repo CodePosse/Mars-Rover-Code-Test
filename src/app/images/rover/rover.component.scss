@@ -1,0 +1,54 @@
+.filters {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-end;
+  @media (max-width: 1180px) {
+    display: inline-flex;
+    float: none !important;
+    margin-top: 36px;
+  }
+  @media (max-width: 568px) {
+    display: flex;
+    flex-direction: column;
+    m4-input, m4-select, button {
+      display: block;
+      width: 100% !important;
+      margin-right: 0 !important;
+      margin: 0 0 14px !important;
+    }
+  }
+}
+
+.pagination {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+
+  .pagination-block {
+    @media (max-width: 568px) {
+      display: block;
+      text-align: center;
+      width: 100%;
+      float: none !important;
+    }
+  }
+}
+
+code {
+  display: inline-flex;
+}
+
+.hint-block {
+  border: 1px dashed #bdbdbd;
+  padding: 10px 0;
+  border-radius: 10px;
+  background: #fbfbfb;
+}
+
+.camera-input {
+  width: 430px;
+  @media (max-width: 1366px) {
+    width: 280px;
+  }
+}
