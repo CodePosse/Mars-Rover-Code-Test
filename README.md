@@ -2,6 +2,9 @@
 
 So... every hack company on earth :clown_face: asks you to do this lame challenge to go get images :camera_flash: from the Red Dead Rovers on Mars using the NASA APIs. As if they didn't know this is like everywhere on the web. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 
+## Live Demo
+https://codeposse.github.io/Mars-Rover-Code-Test/dist/image-gallery
+
 ## Known issues :memo:
 
 1. You may be asked for an image of the day, well, guess what, there is no such thing, the API does not have that, it is out of date. :rage:
