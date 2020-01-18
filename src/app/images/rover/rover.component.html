@@ -1,7 +1,7 @@
 <h3>
-  <div class="d-inline" role="article">
+  <div class="d-inline">
     <span *ngIf="!Loading" role="status">
-    <span style="color: #0366d6;" role="definition">{{CurrentRover | titlecase}}:</span>&nbsp;{{Cameras[SelectedCamera]}}
+    <span style="color: #0366d6;" >{{CurrentRover | titlecase}}:</span>&nbsp;{{Cameras[SelectedCamera]}}
     </span>
     <span *ngIf="Loading" role="status">Loading...</span>
   </div>
@@ -22,27 +22,27 @@
 </h3>
 <hr>
 <div *ngIf="Loading" data-role="activity" data-type="ring" data-style="dark" style="margin: 70px auto;"></div>
-<div class="container-fluid" *ngIf="!Loading" role="status">
+<div class="container-fluid" *ngIf="!Loading">
 
-  <div class="row" role="dialog">
-    <div class="col pagination" role="navigation">
-      <div class="float-left pagination-block" role="navigation">
+  <div class="row">
+    <div class="col pagination">
+      <div class="float-left pagination-block">
         <pagination-controls [autoHide]="true" (pageChange)="CurrentPage = $event" #pagination></pagination-controls>
       </div>
-      <div class="float-right pagination-block" role="navigation">
+      <div class="float-right pagination-block">
         Showing {{CurrentPage}} to {{GetTotalPages()}} of {{Total}} entries
       </div>
     </div>
   </div>
 
-  <div class="row" role="presentation">
-    <div class="image-container ml-auto mr-auto" *ngIf="!Photos.length" role="dialog">
+  <div class="row">
+    <div class="image-container ml-auto mr-auto" *ngIf="!Photos.length">
       <img src="/assets/images/nodata-found.png" alt="">
     </div>
 
     <div class="col-lg-2 col-md-3 col-sm-4 col-fs-12"
          *ngFor="let photo of Photos | paginate: { itemsPerPage: PageSize, currentPage: CurrentPage }">
-      <div class="img-container thumbnail" style="cursor: pointer;" (click)="SelectedPhoto = photo; dialog.open()" role="dialog">
+      <div class="img-container thumbnail" style="cursor: pointer;" (click)="SelectedPhoto = photo; dialog.open()">
         <img *ngIf="photo.img_src" [src]="photo.img_src" [alt]="photo?.camera?.full_name">
         <span class="title" role="presentation">{{photo.earth_date | date: 'mediumDate'}}</span>
       </div>
@@ -52,13 +52,13 @@
 
 <m4-dialog width="90%" [overlay-click-close]="true" [overlay]="true" #dialog>
   <div dialog-title role="dialog">
-    <div role="dialog">{{SelectedPhoto?.camera?.full_name}}</div>
-    <div role="dialog">{{SelectedPhoto?.earth_date | date: 'mediumDate'}}</div role="dialog">
+    <div>{{SelectedPhoto?.camera?.full_name}}</div>
+    <div>{{SelectedPhoto?.earth_date | date: 'mediumDate'}}</div>
   </div>
-  <div dialog-content class="image-container" role="dialog">
+  <div dialog-content class="image-container">
     <img *ngIf="SelectedPhoto.img_src" class="img-fluid" [src]="SelectedPhoto.img_src" alt="">
   </div>
-  <div dialog-actions style="position: relative;top: -20px;left: 5px;" role="dialog">
+  <div dialog-actions style="position: relative;top: -20px;left: 5px;">
     <a [href]="SelectedPhoto?.img_src" style="color: #fff;" target="_blank">View full image</a>
   </div>
 </m4-dialog>
