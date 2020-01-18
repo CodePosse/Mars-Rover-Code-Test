@@ -7,9 +7,18 @@ So... every hack company on earth asks you to do this lame challenge to go get i
 
  1. You may be asked for an image of the day, well, guess what, there is no such thing, the API does not have that
  2. Lots of cameras are offline, or out of focus, so your mileage may vary.
- 3. Dude, TONS of images, so I paginated it. Check it out here: `\src\app\images\rover\rover.component.ts:80`
+ 3. Dude, TONS of images, so I limited it to 4 at a time. Check it out here: `\src\app\images\rover\rover.component.ts:80`
  4. GET YOUR OWN DAMNED API HERE: [https://api.nasa.gov/](https://api.nasa.gov/) and change it here: `\src\app\services\api.service.ts:9`
 
+## Installation
+
+ 1. Get Node
+ 2. Get the Angular CLI for 8.x
+ 3. Clone the repo
+ 4. Type `npm install` and get coffee while it does it's thing.
+ 5. Run the development server following the info below
+ 6. Send me a tip by sponsoring me here os via PayPal [https://www.paypal.com/paypalme2/testshoot](https://www.paypal.com/paypalme2/testshoot)
+ 7. Let me know any other code challenges you come across by emailing me from: [http://codeposse.github.io/](http://codeposse.github.io/)
 
 ## Development server
 
