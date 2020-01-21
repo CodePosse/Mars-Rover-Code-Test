@@ -1,6 +1,6 @@
 # Nasa Mars Rover Interview Code Challenge
 
-So... every company on earth :clown_face: asks you to do this coding challenge to go get images :camera_flash: from the Red Dead Rovers on Mars using the NASA :rocket: APIs. As if they didn't know this is like everywhere on the web so I am . This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
+So... every company on earth :clown_face: asks you to do this coding challenge to go get images :camera_flash: from the Red Dead Rovers on Mars using the NASA :rocket: APIs. As if they didn't know this is posted like everywhere on the web so I am. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 
 ## Live Demo
 [live demo](https://codeposse.github.io/Mars-Rover-Code-Test/dist/)
