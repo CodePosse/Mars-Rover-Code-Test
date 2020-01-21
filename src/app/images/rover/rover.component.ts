@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {NASAPhoto, RoverCamera} from '../../shared/interfaces';
-import {ApiService} from '../../services/api.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { NASAPhoto, RoverCamera } from '../../shared/interfaces';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'nmr-rover',
@@ -10,14 +10,14 @@ import {ApiService} from '../../services/api.service';
 export class RoverComponent implements OnInit {
 
   public RoverCameras: RoverCamera[] = [
-    {abbreviation: 'FHAZ', camera: 'Front Hazard Avoidance Camera', curiosity: true, opportunity: true, spirit: true},
-    {abbreviation: 'RHAZ', camera: 'Rear Hazard Avoidance Camera', curiosity: true, opportunity: true, spirit: true},
-    {abbreviation: 'MAST', camera: 'Mast Camera', curiosity: true, opportunity: false, spirit: false},
-    {abbreviation: 'CHEMCAM', camera: 'Chemistry and Camera Complex', curiosity: true, opportunity: false, spirit: false},
-    {abbreviation: 'MAHLI', camera: 'Mars Hand Lens Imager', curiosity: true, opportunity: false, spirit: false},
-    {abbreviation: 'MARDI', camera: 'Mars Descent Imager', curiosity: true, opportunity: false, spirit: false},
-    {abbreviation: 'NAVCAM', camera: 'Navigation Camera', curiosity: true, opportunity: true, spirit: true},
-    {abbreviation: 'PANCAM', camera: 'Panoramic Camera', curiosity: false, opportunity: true, spirit: true},
+    { abbreviation: 'FHAZ', camera: 'Front Hazard Avoidance Camera', curiosity: true, opportunity: true, spirit: true },
+    { abbreviation: 'RHAZ', camera: 'Rear Hazard Avoidance Camera', curiosity: true, opportunity: true, spirit: true },
+    { abbreviation: 'MAST', camera: 'Mast Camera', curiosity: true, opportunity: false, spirit: false },
+    { abbreviation: 'CHEMCAM', camera: 'Chemistry and Camera Complex', curiosity: true, opportunity: false, spirit: false },
+    { abbreviation: 'MAHLI', camera: 'Mars Hand Lens Imager', curiosity: true, opportunity: false, spirit: false },
+    { abbreviation: 'MARDI', camera: 'Mars Descent Imager', curiosity: true, opportunity: false, spirit: false },
+    { abbreviation: 'NAVCAM', camera: 'Navigation Camera', curiosity: true, opportunity: true, spirit: true },
+    { abbreviation: 'PANCAM', camera: 'Panoramic Camera', curiosity: false, opportunity: true, spirit: true },
     {
       abbreviation: 'MINITES',
       camera: 'Miniature Thermal Emission Spectrometer (Mini-TES)',
@@ -28,17 +28,12 @@ export class RoverComponent implements OnInit {
   ];
 
   @Input() public CurrentRover = 'curiosity';
-
   public RoverCamera: RoverCamera = {};
-
   public Cameras = {};
-
   public SelectedCamera = 'NAVCAM';
   public Sol = 1000;
-
   public Photos: NASAPhoto[] = [];
   public SelectedPhoto: NASAPhoto = {};
-
   public Loading = false;
 
   // Pagination

@@ -1,50 +1,96 @@
 <h3>
   <div class="d-inline">
     <span *ngIf="!Loading" role="status">
-    <span style="color: #0366d6;" >{{CurrentRover | titlecase}}:</span>&nbsp;{{Cameras[SelectedCamera]}}
+      <span style="color: #0366d6;"> {{ CurrentRover | titlecase }}: </span>
+      &nbsp;
+      {{ Cameras[SelectedCamera] }}
     </span>
-    <span *ngIf="Loading" role="status">Loading...</span>
+    <span *ngIf="Loading" role="status">
+      Loading...
+    </span>
   </div>
 
-  <form class="float-right filters" (submit)="GetImages(SelectedCamera, Sol, CurrentRover)">
-    <m4-select name="SelectedCamera" class="mr-4 camera-input rounded" prepend="Camera:"
-               m4-hint="Rover Cameras"
-               [(ngModel)]="SelectedCamera"
-               [options]="Cameras"
-               (ngModelChange)="OnCameraChange()" [disabled]="Loading"></m4-select>
-    <m4-input type="number" name="Sol" class="mr-4 rounded" m4-hint="sol (ranges from 0 to max found in endpoint)"
-              [(ngModel)]="Sol"
-              minlength="0"
-              style="min-width: 200px" prepend="Sol:" [clear-button]="false" [disabled]="Loading"></m4-input>
-    <button type="submit" class="button primary rounded" [disabled]="Loading">Search
+  <form
+    class="float-right filters"
+    (submit)="GetImages(SelectedCamera, Sol, CurrentRover)"
+  >
+    <m4-select
+      name="SelectedCamera"
+      class="mr-4 camera-input rounded"
+      prepend="Camera:"
+      m4-hint="Rover Cameras"
+      [(ngModel)]="SelectedCamera"
+      [options]="Cameras"
+      (ngModelChange)="OnCameraChange()"
+      [disabled]="Loading"
+    ></m4-select>
+    <m4-input
+      type="number"
+      name="Sol"
+      class="mr-4 rounded"
+      m4-hint="sol (ranges from 0 to max found in endpoint)"
+      [(ngModel)]="Sol"
+      minlength="0"
+      style="min-width: 200px"
+      prepend="Sol:"
+      [clear-button]="false"
+      [disabled]="Loading"
+    ></m4-input>
+    <button type="submit" class="button primary rounded" [disabled]="Loading">
+      Search
     </button>
   </form>
 </h3>
-<hr>
-<div *ngIf="Loading" data-role="activity" data-type="ring" data-style="dark" style="margin: 70px auto;"></div>
+<hr />
+<div
+  *ngIf="Loading"
+  data-role="activity"
+  data-type="ring"
+  data-style="dark"
+  style="margin: 70px auto;"
+></div>
 <div class="container-fluid" *ngIf="!Loading">
-
   <div class="row">
     <div class="col pagination">
       <div class="float-left pagination-block">
-        <pagination-controls [autoHide]="true" (pageChange)="CurrentPage = $event" #pagination></pagination-controls>
+        <pagination-controls
+          [autoHide]="true"
+          (pageChange)="CurrentPage = $event"
+          #pagination
+        ></pagination-controls>
       </div>
       <div class="float-right pagination-block">
-        Showing {{CurrentPage}} to {{GetTotalPages()}} of {{Total}} entries
+        Showing {{ CurrentPage }} to {{ GetTotalPages() }} of
+        {{ Total }} entries
       </div>
     </div>
   </div>
 
   <div class="row">
     <div class="image-container ml-auto mr-auto" *ngIf="!Photos.length">
-      <img src="/assets/images/nodata-found.png" alt="">
+      <img src="/assets/images/nodata-found.png" alt="" />
     </div>
 
-    <div class="col-lg-2 col-md-3 col-sm-4 col-fs-12"
-         *ngFor="let photo of Photos | paginate: { itemsPerPage: PageSize, currentPage: CurrentPage }">
-      <div class="img-container thumbnail" style="cursor: pointer;" (click)="SelectedPhoto = photo; dialog.open()">
-        <img *ngIf="photo.img_src" [src]="photo.img_src" [alt]="photo?.camera?.full_name">
-        <span class="title" role="presentation">{{photo.earth_date | date: 'mediumDate'}}</span>
+    <div
+      class="col-lg-2 col-md-3 col-sm-4 col-fs-12"
+      *ngFor="
+        let photo of Photos
+          | paginate: { itemsPerPage: PageSize, currentPage: CurrentPage }
+      "
+    >
+      <div
+        class="img-container thumbnail"
+        style="cursor: pointer;"
+        (click)="SelectedPhoto = photo; dialog.open()"
+      >
+        <img
+          *ngIf="photo.img_src"
+          [src]="photo.img_src"
+          [alt]="photo?.camera?.full_name"
+        />
+        <span class="title" role="presentation">
+          {{ photo.earth_date | date: "mediumDate" }}
+        </span>
       </div>
     </div>
   </div>
@@ -52,13 +98,24 @@
 
 <m4-dialog width="90%" [overlay-click-close]="true" [overlay]="true" #dialog>
   <div dialog-title role="dialog">
-    <div>{{SelectedPhoto?.camera?.full_name}}</div>
-    <div>{{SelectedPhoto?.earth_date | date: 'mediumDate'}}</div>
+    <div>
+      {{ SelectedPhoto?.camera?.full_name }}
+    </div>
+    <div>
+      {{ SelectedPhoto?.earth_date | date: "mediumDate" }}
+    </div>
   </div>
   <div dialog-content class="image-container">
-    <img *ngIf="SelectedPhoto.img_src" class="img-fluid" [src]="SelectedPhoto.img_src" alt="">
+    <img
+      *ngIf="SelectedPhoto.img_src"
+      class="img-fluid"
+      [src]="SelectedPhoto.img_src"
+      alt=""
+    />
   </div>
   <div dialog-actions style="position: relative;top: -20px;left: 5px;">
-    <a [href]="SelectedPhoto?.img_src" style="color: #fff;" target="_blank">View full image</a>
+    <a [href]="SelectedPhoto?.img_src" style="color: #fff;" target="_blank">
+      View full image
+    </a>
   </div>
 </m4-dialog>
