@@ -1,14 +1,25 @@
 {
-  "name": "nasa-mars-rover",
-  "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve --aot --open",
-    "build": "ng build --prod",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
-  },
+  "name": "mars-rover-coding-test-angular-8",
+  "description": "coding test to get images from the mars rovers",
+  "version": "8",
+  "keywords": [
+    "mars rover",
+    "NASA",
+    "angular",
+    "ng8"
+  ],
+  "maintainers": [
+    {
+      "name": "Tim Hunold",
+      "email": "codeposse+github@gmail.com",
+      "web": "http://www.ItsSoBig.com"
+    }
+  ],
+  "demos": [
+    "https://codeposse.github.io/Mars-Rover-Code-Test/dist/"
+  ],
+  "homepage": "https://github.com/CodePosse/Mars-Rover-Code-Test",
+  "readmeFilename": "README.md",
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.2.14",
