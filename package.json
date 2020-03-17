@@ -32,6 +32,7 @@
     "@angular/pwa": "^0.803.23",
     "@angular/router": "~8.2.14",
     "@angular/service-worker": "~8.2.14",
+    "acorn": "^7.1.1",
     "metro4": "^4.3.4",
     "moment": "^2.24.0",
     "ng-metro4": "^1.0.8",
